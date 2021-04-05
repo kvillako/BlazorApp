@@ -87,8 +87,8 @@
         <div id="deptName" class="col-sm-10">
             <InputText @bind-Value="EditEmployeeModel.Department.DepartmentName"
                        class="form-control" />
-            <ValidationMessage For="@(() => EditEmployeeModel.FirstName)" />
+            <ValidationMessage For="@(() => EditEmployeeModel.Department.DepartmentName)" />
         </div>
     </div>
-    <button type="submit">Save</button>
+    <button class="btn btn-primary" type="submit">Submit</button>
 </EditForm>
