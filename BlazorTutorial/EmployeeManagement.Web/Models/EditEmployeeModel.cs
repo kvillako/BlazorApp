@@ -17,7 +17,7 @@ namespace EmployeeManagement.Web.Models
         [Required]
         public string LastName { get; set; }
         [EmailAddress]
-        [EmailDomainValidator(AllowedDomain = "pragimtech.com", ErrorMessage = "Only PragimTech.com is allowed")]
+        //[EmailDomainValidator(AllowedDomain = "pragimtech.com", ErrorMessage = "Only PragimTech.com is allowed")]
         public string Email { get; set; }
         [CompareProperty("Email",ErrorMessage ="Email and Corfirm Email must match")]
         public string ConfirmEmail { get; set; }
@@ -26,6 +26,7 @@ namespace EmployeeManagement.Web.Models
         [Required]
         public int DepartmentId { get; set; }
         public string PhotoPath { get; set; }
-        public Department Department { get; set; }
+        [ValidateComplexType]
+        public Department Department { get; set; } = new Department();
     }
 }
